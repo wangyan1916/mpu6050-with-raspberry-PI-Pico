@@ -55,4 +55,12 @@
 
 - 从[此处](https://github.com/micropython-IMU/micropython-mpu9x50)获得库
 - 需要下载`imu.py`和`vector3d.py`
+
+#### 获取和理解我的picoMPU6050.py代码
+
+- 从[这里](https://peppe8o.com/download/micropython/MPU6050/picoMPU6050.py)下载picoMPU6050.py。下文将对其进行描述
+- 首先，需要导入库。vector3d.py会被imu.py调用，所以此处不用导入
+- MPU6050类需要一个I<sup>2</sup>C目标。
+- 这就是设置陀螺仪和加速度计所需要的全部内容。然后就是输出我们需要的值。
+- 我们使用`while`循环通过树莓派pico读取MPU6050的值
 - 
