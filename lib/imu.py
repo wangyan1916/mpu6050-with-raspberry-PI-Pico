@@ -355,9 +355,9 @@ class MPU6050(object):
         self._accel._ivector[1] = bytes_toint(self.buf6[2], self.buf6[3])
         self._accel._ivector[2] = bytes_toint(self.buf6[4], self.buf6[5])
         scale = (16384, 8192, 4096, 2048)
-        self._accel._vector[0] = self._accel._ivector[0] / scale[self.accel_range]
-        self._accel._vector[1] = self._accel._ivector[1] / scale[self.accel_range]
-        self._accel._vector[2] = self._accel._ivector[2] / scale[self.accel_range]
+        self._accel._vector[0] = self._accel._ivector[0] / scale[self.accel_range] # type: ignore
+        self._accel._vector[1] = self._accel._ivector[1] / scale[self.accel_range] # type: ignore
+        self._accel._vector[2] = self._accel._ivector[2] / scale[self.accel_range] # type: ignore
 
     def get_accel_irq(self):
         """
@@ -389,9 +389,9 @@ class MPU6050(object):
         self._gyro._ivector[1] = bytes_toint(self.buf6[2], self.buf6[3])
         self._gyro._ivector[2] = bytes_toint(self.buf6[4], self.buf6[5])
         scale = (131, 65.5, 32.8, 16.4)
-        self._gyro._vector[0] = self._gyro._ivector[0] / scale[self.gyro_range]
-        self._gyro._vector[1] = self._gyro._ivector[1] / scale[self.gyro_range]
-        self._gyro._vector[2] = self._gyro._ivector[2] / scale[self.gyro_range]
+        self._gyro._vector[0] = self._gyro._ivector[0] / scale[self.gyro_range] # type: ignore
+        self._gyro._vector[1] = self._gyro._ivector[1] / scale[self.gyro_range] # type: ignore
+        self._gyro._vector[2] = self._gyro._ivector[2] / scale[self.gyro_range] # type: ignore
 
     def get_gyro_irq(self):
         """
