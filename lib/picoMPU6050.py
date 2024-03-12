@@ -35,14 +35,14 @@ while True:
     #print(imu.accel.xyz,imu.gyro.xyz,imu.temperature,end='\r')
     
     # Following rows round values get for a more pretty print:
-    ax=round(imu.accel.x,2)
-    ay=round(imu.accel.y,2)
-    az=round(imu.accel.z,2)
+    ax=round(imu.accel.x,1)
+    ay=round(imu.accel.y,1)
+    az=round(imu.accel.z,1)
     gx=round(imu.gyro.x)
     gy=round(imu.gyro.y)
     gz=round(imu.gyro.z)
     tem=round(imu.temperature,2)
-    print(ax,"\t",ay,"\t",az,"\t",gx,"\t",gy,"\t",gz,"\t",tem,"        ",end="\r")
+    print(f'Accel: {ax},{ay},{az} Gyro: {gx},{gy},{gz} Temp: {tem}',end='\r')
     
     # Following sleep statement makes values enought stable to be seen and
     # read by a human from shell
